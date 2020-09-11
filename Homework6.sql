@@ -15,7 +15,7 @@ SELECT (SELECT user_id FROM profiles ORDER BY birthday DESC LIMIT 10 AS likes.) 
 
 SELECT SUM(likes_total) FROM  
   (SELECT 
-    (SELECT COUNT(*) FROM likes WHERE to_like_id = profiles.user_id AND to_like_id = 2) AS likes_total  
+    (SELECT COUNT(*) FROM likes WHERE to_like_id = profiles.user_id AND to_like_id = 1) AS likes_total  
     FROM profiles 
     ORDER BY birthday 
     DESC LIMIT 20) AS user_likes;
