@@ -13,10 +13,10 @@ CREATE TABLE IF NOT EXISTS orders (
 	product_name VARCHAR(255) NOT NULL
 	);
 
-INSERT INTO users_orders (name, order_id) VALUES ( 'Геннадий', 1), ( 'Михаил', 2), ( 'Евгений', 3), ( 'Светлана', NULL), ( 'Dmitriy', NULL);
+INSERT INTO users_orders (name, order_id) VALUES ( 'ГѓГҐГ­Г­Г Г¤ГЁГ©', 1), ( 'ГЊГЁГµГ ГЁГ«', 2), ( 'Г…ГўГЈГҐГ­ГЁГ©', 3), ( 'Г‘ГўГҐГІГ«Г Г­Г ', NULL), ( 'Dmitriy', NULL);
 INSERT INTO orders (product_id , product_name) VALUES ( 34, 'PC'), ( 334, 'phone'), ( 3234, 'memory'), ( 123, 'Motherboard 32');
 
-SELECT u.user_id, u.name, o.order_id, o.product_id, o.product_name FROM users_orders AS u JOIN orders AS o ON u.order_id > 0 AND o.order_id = u.order_id ;
+SELECT u.user_id, u.name, o.order_id, o.product_id, o.product_name FROM users_orders AS u JOIN orders AS o ON o.order_id = u.order_id;
 
 -- 2
 
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS cities (
 	name VARCHAR(255) NOT NULL UNIQUE
 );
 INSERT INTO flights (f_from, f_to) VALUES ('moscow', 'omsk'), ('novgorod', 'kazan'), ('irkutsk', 'moscow'), ('omsk', 'irkutsk'), ('moscow', 'kazan');
-INSERT INTO cities (label, name) VALUES ('moscow', 'Москва'), ('irkutsk', 'Иркутск'), ('novgorod', 'Новгород'), ('kazan', 'Казань'), ('omsk', 'Омск');
+INSERT INTO cities (label, name) VALUES ('moscow', 'ГЊГ®Г±ГЄГўГ '), ('irkutsk', 'Г€Г°ГЄГіГІГ±ГЄ'), ('novgorod', 'ГЌГ®ГўГЈГ®Г°Г®Г¤'), ('kazan', 'ГЉГ Г§Г Г­Гј'), ('omsk', 'ГЋГ¬Г±ГЄ');
 SELECT
   f.id, cities_from.name AS f_from, cities_to.name AS f_to
 FROM flights AS f
